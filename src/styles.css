@@ -1,0 +1,30 @@
+.sign-row{
+    align-items: center;
+    margin-top: 10rem;
+    background: black;
+    border: 1px solid black;
+    border-radius: 16px;
+    box-shadow: 2px 2px 2px 2px #b11c1c;
+    color: #ceb9bb;
+    text-align: center;
+    width: 30rem;
+}
+.sign-button{
+    width: 13rem;
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    background: black;
+}
+.error{
+    color: indianred;
+    margin-bottom: 1rem;
+}
+.nav-text{
+    color: white;
+}
+    @media(max-width:575.98px){
+        .lkjDVC{
+            min-width: 6rem !important;
+            }
+    }
+    
