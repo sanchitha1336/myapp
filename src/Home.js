@@ -2,6 +2,15 @@ import CardList from "./Card";
 import { useEffect, useState } from "react";
 import productData from "./const";
 import { Container, Row, Col, Form } from "react-bootstrap";
+
+const FilterProduct=(props)=>{
+  return(
+    <Col className="mb-2 col d-flex justify-content-center" >
+      <>
+            <CardList product={props.product} />
+      </>
+    </Col>);
+}
 const Home = () => {
   // const product=JSON.parse(productData);
   console.log(productData.filters.inlineFilters);
@@ -10,7 +19,6 @@ const Home = () => {
   const [gender, setGender] = useState();
   const [filterValue, setFilterValue] = useState();
 
-  console.log(productData.products);
   useEffect(() => {
     productData.filters.inlineFilters.map((gender) => {
       setGender(gender);
@@ -20,9 +28,9 @@ const Home = () => {
     data.map((filter) => {
       setFilterValue(filter.gender);
     });
-  }, []);
+  }, [data,gender]);
 
-  console.log(gender, "hh", filterValue);
+  console.log(gender, "hh", filterValue,"value");
   //   function productApi() {
   //     const url = "https://demo7303877.mockable.io/";
   //     fetch(url, {
@@ -44,11 +52,7 @@ const Home = () => {
   //   }, []);
   function handleOnChange(e) {
     const value = e.target.value;
-    data?.filter((product) => {
-      if (value == product.gender.toLowerCase()) {
-        setFilterValue(product);
-      }
-    });
+    setFilterValue(value);
   }
   return (
     <Container>
@@ -75,11 +79,12 @@ const Home = () => {
               </Col>
             );
           })}
-          <h1>Filter Date:</h1>
-              <Col className="mb-2 col d-flex justify-content-center">
-                <CardList product={filterValue} />
-              </Col>
-           
+          <h1>Filter Data:</h1>
+          {data?.map((product) => {
+            if (filterValue == product.gender.toLowerCase()) {
+             return( <FilterProduct product={product} />);
+            }
+          })}
         </>
       </Row>
     </Container>
