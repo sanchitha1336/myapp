@@ -84,6 +84,9 @@ const Home = () => {
             if (filterValue == product.gender.toLowerCase()) {
              return( <FilterProduct product={product} />);
             }
+            if((filterValue=='men women' || filterValue=='boys girls')&& (product.gender.toLowerCase()=='unisex')){
+              return( <FilterProduct product={product} />);
+            }
           })}
         </>
       </Row>
