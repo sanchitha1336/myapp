@@ -11,7 +11,6 @@ const Login = () => {
   const [error, setError] = useState("");
    const user=localStorage.getItem('user');
    const detail=JSON.parse(user);
-     console.log(detail)
   const navigate = useNavigate();
   function handleOnSubmit(e) {
     const useremail = email.email;

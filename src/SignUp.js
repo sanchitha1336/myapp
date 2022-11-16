@@ -21,7 +21,6 @@ const SignUp = () => {
 
     e.preventDefault();
     const validPassword = new RegExp("^(?=.*?[A-Za-z])(?=.*?[0-9]).{6,}$");
-    console.log(username.length);
     if (!validPassword.test(userpassword)) {
       setError("Please enter a valid password Ex:$Sghihyrvvhf1");
       return;

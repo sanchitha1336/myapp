@@ -5,7 +5,7 @@ const Menu=()=>{
     const navigate=useNavigate();
     function onLogOUt(){
       localStorage.removeItem('user');
-      navigate(-1)
+      navigate(-2)
     }
     return(
         <div>
