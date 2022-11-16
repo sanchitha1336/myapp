@@ -1,5 +1,6 @@
-import { Button,Card } from "react-bootstrap"
+import { Button,Card ,Navbar,Container} from "react-bootstrap"
 import { useNavigate } from "react-router-dom";
+import Home from "./Home";
 const Menu=()=>{
     const navigate=useNavigate();
     function onLogOUt(){
@@ -8,18 +9,18 @@ const Menu=()=>{
     }
     return(
         <div>
-<Button type='button' className="d-flex justify-content-end" onClick={()=>{onLogOUt();}}>LogOUT</Button>
-    <Card style={{ width: '18rem' }}>
-      <Card.Img variant="top" src="holder.js/100px180" />
-      <Card.Body>
-        <Card.Title>Card Title</Card.Title>
-        <Card.Text>
-          Some quick example text to build on the card title and make up the
-          bulk of the card's content.
-        </Card.Text>
-        <Button variant="primary">Go somewhere</Button>
-      </Card.Body>
-    </Card>
+          <Navbar className="bg-dark" variant="white">
+      <Container variant="white">
+        <Navbar.Brand href="#home" variant="white" className="nav-text" >Blogs</Navbar.Brand>
+        <Navbar.Toggle />
+        <Navbar.Collapse className="justify-content-end" variant="white">
+          <Navbar.Text variant="white" className="nav-text" onClick={()=>{onLogOUt();}}>
+            Logout
+          </Navbar.Text>
+        </Navbar.Collapse>
+      </Container>
+    </Navbar>
+     <Home />
         </div>
     )
 }

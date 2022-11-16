@@ -2,6 +2,7 @@ import CardList from "./Card";
 import { useEffect, useState } from "react";
 import productData from "./const";
 import { Container, Row, Col, Form } from "react-bootstrap";
+import DragDrop from "./Drag";
 
 const FilterProduct=(props)=>{
   return(
@@ -30,7 +31,6 @@ const Home = () => {
     });
   }, [data,gender]);
 
-  console.log(gender, "hh", filterValue,"value");
   //   function productApi() {
   //     const url = "https://demo7303877.mockable.io/";
   //     fetch(url, {
@@ -56,6 +56,7 @@ const Home = () => {
   }
   return (
     <Container>
+      <DragDrop />
       <Row className="mt-2 mb-2">
         <Col className="col">
           <Form.Select

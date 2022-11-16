@@ -3,6 +3,8 @@ import React, { useEffect } from "react";
 import Form from "react-bootstrap/Form";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import './styles.css'
+
 const Login = () => {
   const [email, setEmail] = useState({ email: "" });
   const [password, setPassword] = useState({ password: "" });
@@ -21,12 +23,12 @@ const Login = () => {
       return
     }
     if(useremail !==detail.useremail){
-        setError('email not matched')
+        setError('Email or Password is incorrect')
         return;
     }
     if(userpassword !== detail.password.password){
         console.log(detail.password,userpassword)
-        setError('password not matched')
+        setError('Email or Password is incorrect')
         return;
     }
     localStorage.setItem("user", { useremail, password });
@@ -44,10 +46,11 @@ const Login = () => {
   }
   return (
     <div>
-      <Container>
-        <Row className="d-flex justify-content-center">
+      <Container className="d-flex justify-content-center">
+        <Row className="d-flex justify-content-center sign-row">
           <Col>
             <Form
+            className="mt-4"
               onSubmit={(e) => {
                 handleOnSubmit(e);
               }}
@@ -71,11 +74,11 @@ const Login = () => {
                 placeholder="password"
                 required
               />
-              <Button type="submit" className="mt-2">
+              <Button type="submit" className="mt-4 sign-button">
                 Login
               </Button>
             </Form>
-            <div>{error}</div>
+            <div className="error">{error}</div>
           </Col>
         </Row>
       </Container>
