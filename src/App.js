@@ -6,6 +6,7 @@ import Menu from './Menu';
 import CardList from './Card';
 import Home from './Home';
 import { createContext, useEffect, useState } from 'react';
+import { Provider } from 'react-redux';
 
 function App() {
  

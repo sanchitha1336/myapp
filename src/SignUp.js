@@ -3,7 +3,7 @@ import './styles.css'
 import React, { useEffect } from "react";
 import Form from "react-bootstrap/Form";
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import {  useNavigate } from "react-router-dom";
 const SignUp = () => {
   const [name, setName] = useState({ name: "" });
   const [email, setEmail] = useState({ email: "" });
@@ -71,7 +71,6 @@ const SignUp = () => {
           >
             <Form.Label>User Name</Form.Label>
             <Form.Control
-              defaultValue={name.name}
               value={name.name}
               onChange={(e) => {
                 handleChangeName(e);
